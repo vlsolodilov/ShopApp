@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item android:drawable="@color/dark_blue"/>
+
+    <item
+        android:right="12dp"
+        android:gravity="center">
+        <shape android:shape="oval">
+            <size android:width="132dp" android:height="132dp"/>
+            <solid android:color="@color/orange"/>
+        </shape>
+    </item>
+
+    <item
+        android:left="88dp"
+        android:gravity="center"
+        android:drawable="@drawable/ic_ecommerce_concept"/>
+</layer-list>

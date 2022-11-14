@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="explorer">Explorer</string>
+    <string name="cart">cart</string>
+    <string name="favorite">favorite</string>
+    <string name="profile">profile</string>
+    <string name="location">Zihuatanejo, Gro</string>
+    <string name="select_category">Select Category</string>
+    <string name="view_all">view all</string>
+    <string name="search">Search</string>
+    <string name="hot_sales">Hot sales</string>
+    <string name="see_more">see more</string>
+    <string name="labelNew">New</string>
+    <string name="buy_now">Buy now!</string>
+    <string name="best_seller">Best Seller</string>
+    <string name="filter_options">Filter options</string>
+    <string name="done">Done</string>
+    <string name="brand">Brand</string>
+    <string name="price">Price</string>
+    <string name="size">Size</string>
+
+    <string-array name="phone_brand">
+        <item>All</item>
+        <item>Samsung</item>
+        <item>Xiaomi</item>
+        <item>Motorola</item>
+    </string-array>
+
+    <string-array name="phone_price">
+        <item>All</item>
+        <item>$0 - $300</item>
+        <item>$300 - $500</item>
+        <item>$500 - $10000</item>
+    </string-array>
+
+    <string-array name="phone_size">
+        <item>All</item>
+        <item>0 to 4.5 inches</item>
+        <item>4.5 to 5.5 inches</item>
+        <item>5.5 to 10 inches</item>
+    </string-array>
+
+</resources>

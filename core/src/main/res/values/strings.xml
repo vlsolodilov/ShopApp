@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ShopApp</string>
+    <string name="error_message">Something went wrong\nLet\'s try again?</string>
+    <string name="try_again">Try again</string>
+</resources>
