@@ -1,6 +1,7 @@
 package com.solodilov.shopapp.di
 
 import android.app.Application
+import com.solodilov.feature_cart_screen.di.CartScreenComponent
 import com.solodilov.feature_main_screen.di.MainScreenComponent
 import dagger.BindsInstance
 import dagger.Component
@@ -17,6 +18,7 @@ interface ApplicationComponent {
     fun retrofit(): Retrofit
 
     fun mainScreenComponent(): MainScreenComponent.Factory
+    fun cartScreenComponent(): CartScreenComponent.Factory
 
 
     @Component.Factory

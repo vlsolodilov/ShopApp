@@ -7,4 +7,10 @@
 
     <include app:graph="@navigation/main_screen_navigation" />
 
+    <fragment
+        android:id="@+id/cart_fragment"
+        android:name="com.solodilov.feature_cart_screen.presentation.CartFragment"
+        android:label="CartFragment"
+        tools:layout="@layout/fragment_cart"/>
+
 </navigation>

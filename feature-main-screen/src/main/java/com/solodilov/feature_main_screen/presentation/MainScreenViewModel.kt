@@ -35,6 +35,8 @@ class MainScreenViewModel @Inject constructor(
         handleError(throwable)
     }
 
+    private var lastCategory: Category? = null
+
     init {
         loadProductList()
         getCartSize()
@@ -42,14 +44,17 @@ class MainScreenViewModel @Inject constructor(
 
     fun loadProductList() {
         _category.value?.let { currentCategory ->
-            viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
-                _data.postValue(getLoaders())
-                delay(2000) //TODO remove after test
-                if (currentCategory == Category.PHONES) {
-                    val items = getProductList()
-                    _data.postValue(items)
-                } else {
-                    throw RuntimeException()
+            if (currentCategory != lastCategory) {
+                lastCategory = currentCategory
+                viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
+                    _data.postValue(getLoaders())
+                    delay(2000) //TODO remove after test
+                    if (currentCategory == Category.PHONES) {
+                        val items = getProductList()
+                        _data.postValue(items)
+                    } else {
+                        throw RuntimeException()
+                    }
                 }
             }
         }

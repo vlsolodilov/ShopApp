@@ -34,10 +34,4 @@ class NetworkModule {
             .addConverterFactory(gsonConverterFactory)
             .build()
 
-    @Provides
-    @Singleton
-    fun provideRunMockyApi(
-        retrofit: Retrofit,
-    ): RunMockyApi =
-        retrofit.create(RunMockyApi::class.java)
 }

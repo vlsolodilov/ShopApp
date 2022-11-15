@@ -55,11 +55,19 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         binding.productList.adapter = adapter
 
         initCategoryTabs()
+
+        binding.bottomNavigation.setOnItemSelectedListener { menuItem ->
+            when (menuItem.itemId) {
+                R.id.cart_fragment -> findNavController().navigate(R.id.cart_fragment)
+            }
+            true
+        }
     }
 
     private fun observeViewModel() {
         viewModel.data.observe(viewLifecycleOwner) { adapter?.items = it }
         viewModel.cartSize.observe(viewLifecycleOwner) { setCartBadge(it) }
+        viewModel.category.observe(viewLifecycleOwner) { checkSelectedTab(it) }
     }
 
     private fun initCategoryTabs() {
@@ -94,6 +102,10 @@ class MainFragment : Fragment(R.layout.fragment_main) {
         val newTab = binding.tabLayout.newTab()
         newTab.customView = tabView.root
         binding.tabLayout.addTab(newTab)
+    }
+
+    private fun checkSelectedTab(category: Category) {
+        binding.tabLayout.getTabAt(category.ordinal)?.select()
     }
 
     private fun refreshProductList() {
