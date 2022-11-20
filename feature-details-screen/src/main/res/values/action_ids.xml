@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <item name="action_product_detail_fragment_to_cart_fragment" type="id"/>
+</resources>

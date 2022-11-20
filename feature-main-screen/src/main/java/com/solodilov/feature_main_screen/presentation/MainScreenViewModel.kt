@@ -86,7 +86,7 @@ class MainScreenViewModel @Inject constructor(
         )
     }
 
-    private fun getCartSize() {
+    fun getCartSize() {
         viewModelScope.launch(Dispatchers.IO + exceptionHandler) {
             val cartSize = getCartSizeUseCase()
             _cartSize.postValue(cartSize)
@@ -100,6 +100,7 @@ class MainScreenViewModel @Inject constructor(
     private fun handleError(error: Throwable) {
         Log.d(TAG, "handleError: ${error.message}")
         _data.postValue(listOf(MainScreenErrorItem))
+        lastCategory = null
     }
 
     companion object {

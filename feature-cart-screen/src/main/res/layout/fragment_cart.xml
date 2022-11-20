@@ -49,14 +49,8 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/backButton" />
 
-    <androidx.constraintlayout.widget.Group
-        android:id="@+id/cartContent"
-        android:layout_width="0dp"
-        android:layout_height="0dp"
-        app:constraint_referenced_ids="cartScrollView, emptyCart" />
-
     <androidx.core.widget.NestedScrollView
-        android:id="@+id/cartScrollView"
+        android:id="@+id/cartContent"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="49dp"

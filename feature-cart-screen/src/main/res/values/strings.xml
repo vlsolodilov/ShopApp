@@ -6,4 +6,6 @@
     <string name="delivery">Delivery</string>
     <string name="checkout">Checkout</string>
     <string name="cart_is_empty">Cart is empty</string>
+    <string name="cart_product_price_format">\$%.2f</string>
+    <string name="total_price_format">\$%,d  us</string>
 </resources>

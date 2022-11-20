@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="product_details">Product Details</string>
+    <string name="select_color_and_capacity">Select color and capacity</string>
+    <string name="empty_fragment">Empty fragment</string>
+    <string name="add_to_cart_button">Add to Cart \u0020\u0020 \$%,.2f</string>
+    <string name="capacity_format">%s GB</string>
+</resources>

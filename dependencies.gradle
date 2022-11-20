@@ -40,4 +40,7 @@ ext.libs = [
         // Navigation
         navigationFragment         : "androidx.navigation:navigation-fragment-ktx:$versions.navigation",
         navigationUi               : "androidx.navigation:navigation-ui-ktx:$versions.navigation",
+
+        // ViewPager
+        viewPager                  : "androidx.viewpager2:viewpager2:1.0.0",
 ]

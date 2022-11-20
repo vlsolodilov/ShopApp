@@ -110,10 +110,11 @@ class MainFragment : Fragment(R.layout.fragment_main) {
 
     private fun refreshProductList() {
         viewModel.loadProductList()
+        viewModel.getCartSize()
     }
 
     private fun startProductDetailFragment(id: Long) {
-
+        findNavController().navigate(R.id.action_main_fragment_to_product_detail_fragment)
     }
 
     private fun setCartBadge(count: Int) {

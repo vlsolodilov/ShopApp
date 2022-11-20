@@ -12,7 +12,7 @@ import com.solodilov.core.presentation.viewBinding
 import com.solodilov.feature_cart_screen.R
 import com.solodilov.feature_cart_screen.databinding.FragmentCartBinding
 import com.solodilov.feature_cart_screen.di.CartScreenComponentProvider
-import java.text.DecimalFormat
+import java.util.*
 import javax.inject.Inject
 
 class CartFragment : Fragment(R.layout.fragment_cart) {
@@ -72,8 +72,11 @@ class CartFragment : Fragment(R.layout.fragment_cart) {
     private fun renderContentState(contentState: CartScreenState.Content) {
         if (contentState.content.cartProductList.isNotEmpty()) {
             cartProductAdapter?.submitList(contentState.content.cartProductList)
-            binding.totalPrice.text =
-                "$${DecimalFormat("#,###").format(contentState.content.total)} us"
+            binding.totalPrice.text = String.format(
+                Locale.ENGLISH,
+                getString(R.string.total_price_format),
+                contentState.content.total
+            )
             binding.deliveryCost.text = contentState.content.delivery
             toggleState(
                 isLoading = false,

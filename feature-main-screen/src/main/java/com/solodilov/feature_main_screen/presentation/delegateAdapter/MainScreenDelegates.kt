@@ -11,6 +11,7 @@ import com.solodilov.core.databinding.ErrorLayoutBinding
 import com.solodilov.feature_main_screen.R
 import com.solodilov.feature_main_screen.databinding.*
 import com.solodilov.feature_main_screen.presentation.delegateAdapter.model.*
+import java.util.*
 
 object MainScreenDelegates {
 
@@ -82,8 +83,16 @@ object MainScreenDelegates {
 
                 binding.bestSellerFavorite.setImageResource(favoriteImage)
                 binding.bestSellerTitle.text = item.title
-                binding.bestSellerPrice.text = item.price
-                binding.bestSellerFullPrice.text = item.fullPrice
+                binding.bestSellerPrice.text = String.format(
+                    Locale.ENGLISH,
+                    getString(R.string.best_seller_price_format),
+                    item.price
+                )
+                binding.bestSellerFullPrice.text = String.format(
+                    Locale.ENGLISH,
+                    getString(R.string.best_seller_price_format),
+                    item.fullPrice
+                )
 
                 binding.root.setOnClickListener { onProductClick(item) }
             }

@@ -4,7 +4,6 @@ import com.solodilov.feature_main_screen.domain.entity.BestSeller
 import com.solodilov.feature_main_screen.domain.entity.HotSale
 import com.solodilov.feature_main_screen.presentation.delegateAdapter.model.BestSellerItemUi
 import com.solodilov.feature_main_screen.presentation.delegateAdapter.model.HotSaleItemUi
-import java.text.DecimalFormat
 import javax.inject.Inject
 
 class ProductUiMapper @Inject constructor() {
@@ -23,11 +22,8 @@ class ProductUiMapper @Inject constructor() {
             id = bestSeller.id,
             isFavorites = bestSeller.isFavorites,
             title = bestSeller.title,
-            price = formatPrice(bestSeller.price),
-            fullPrice = formatPrice(bestSeller.fullPrice),
+            price = bestSeller.price,
+            fullPrice = bestSeller.fullPrice,
             picture = bestSeller.picture,
         )
-
-    private fun formatPrice(price: Int): String =
-        "$${DecimalFormat("#,###").format(price)}"
 }

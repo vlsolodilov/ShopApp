@@ -9,9 +9,10 @@ import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.bitmap.CenterCrop
 import com.bumptech.glide.load.resource.bitmap.RoundedCorners
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.solodilov.feature_cart_screen.R
 import com.solodilov.feature_cart_screen.databinding.ItemCartProductBinding
 import com.solodilov.feature_cart_screen.domain.entity.CartProduct
-import java.text.DecimalFormat
+import java.util.*
 
 class CartProductAdapter
     : ListAdapter<CartProduct, CartProductViewHolder>(CartProductDiffCallback()) {
@@ -36,7 +37,11 @@ class CartProductViewHolder(
 
         binding.apply {
             cartProductTitle.text = cartProduct.title
-            cartProductPrice.text = "$${DecimalFormat("###.00").format(cartProduct.price)}"
+            cartProductPrice.text = String.format(
+                Locale.ENGLISH,
+                itemView.context.getString(R.string.cart_product_price_format),
+                cartProduct.price.toFloat()
+            )
             cartProductImage
             productCount.text = cartProduct.quantity.toString()
         }

@@ -3,14 +3,41 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/main_navigation"
-    app:startDestination="@id/main_screen_navigation">
+    app:startDestination="@id/main_fragment">
 
-    <include app:graph="@navigation/main_screen_navigation" />
+    <fragment
+        android:id="@+id/main_fragment"
+        android:name="com.solodilov.feature_main_screen.presentation.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main">
+        <action
+            android:id="@+id/action_main_fragment_to_filter_options_fragment"
+            app:destination="@id/filter_options_fragment1" />
+        <action
+            android:id="@+id/action_main_fragment_to_product_detail_fragment"
+            app:destination="@id/product_detail_fragment" />
+    </fragment>
+
+    <dialog
+        android:id="@+id/filter_options_fragment1"
+        android:name="com.solodilov.feature_main_screen.presentation.FilterOptionsFragment"
+        android:label="FilterBottomSheetDialogFragment"
+        tools:layout="@layout/bottom_sheet_filter" />
 
     <fragment
         android:id="@+id/cart_fragment"
         android:name="com.solodilov.feature_cart_screen.presentation.CartFragment"
         android:label="CartFragment"
         tools:layout="@layout/fragment_cart"/>
+
+    <fragment
+        tools:layout="@layout/fragment_product_detail"
+        android:id="@+id/product_detail_fragment"
+        android:name="com.solodilov.feature_details_screen.presentation.fragment.ProductDetailFragment"
+        android:label="ProductDetailFragment" >
+        <action
+            android:id="@+id/action_product_detail_fragment_to_cart_fragment"
+            app:destination="@id/cart_fragment" />
+    </fragment>
 
 </navigation>

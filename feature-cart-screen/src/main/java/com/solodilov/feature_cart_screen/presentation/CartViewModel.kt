@@ -37,7 +37,7 @@ class CartViewModel @Inject constructor(
 
     private fun handleError(error: Throwable) {
         Log.d(TAG, "handleError: ${error.message}")
-        _state.value = CartScreenState.Error
+        _state.postValue(CartScreenState.Error)
     }
 
     companion object {
